@@ -1,0 +1,365 @@
+/* The MIT License */
+.delete_img,
+.delete_img *,
+.delete_img-previews,
+.delete_img-previews * {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.delete_img {
+  position: relative;
+  border: 1px solid rgba(0,0,0,0.08);
+  background: rgba(0,0,0,0.02);
+  padding: 1em;
+}
+.delete_img.del_img-clickable {
+  cursor: pointer;
+}
+.delete_img.del_img-clickable .del_img-message,
+.delete_img.del_img-clickable .del_img-message span {
+  cursor: pointer;
+}
+.delete_img.del_img-clickable * {
+  cursor: default;
+}
+.delete_img .del_img-message {
+  opacity: 1;
+  -ms-filter: none;
+  filter: none;
+}
+.delete_img.del_img-drag-hover {
+  border-color: rgba(0,0,0,0.15);
+  background: rgba(0,0,0,0.04);
+}
+.delete_img.del_img-started .del_img-message {
+  display: none;
+}
+.delete_img .del_img-preview,
+.delete_img-previews .del_img-preview {
+  background: rgba(255,255,255,0.8);
+  position: relative;
+  display: inline-block;
+  margin: 17px;
+  vertical-align: top;
+  border: 1px solid #acacac;
+  padding: 6px 6px 6px 6px;
+}
+.delete_img .del_img-preview.del_img-file-preview [data-del_img-thumbnail],
+.delete_img-previews .del_img-preview.del_img-file-preview [data-del_img-thumbnail] {
+  display: none;
+}
+.delete_img .del_img-preview .del_img-details,
+.delete_img-previews .del_img-preview .del_img-details {
+  width: 100px;
+  height: 100px;
+  position: relative;
+  background: #ebebeb;
+  padding: 5px;
+  margin-bottom:9px;
+}
+.delete_img .del_img-preview .del_img-details .del_img-filename,
+.delete_img-previews .del_img-preview .del_img-details .del_img-filename {
+  overflow: hidden;
+  height: 100%;
+}
+.delete_img .del_img-preview .del_img-details img,
+.delete_img-previews .del_img-preview .del_img-details img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100px;
+  height: 100px;
+}
+.delete_img .del_img-preview .del_img-details .del_img-size,
+.delete_img-previews .del_img-preview .del_img-details .del_img-size {
+  position: absolute;
+  bottom: -28px;
+  left: 3px;
+  height: 28px;
+  line-height: 28px;
+}
+.delete_img .del_img-preview.del_img-error .del_img-error-mark,
+.delete_img-previews .del_img-preview.del_img-error .del_img-error-mark {
+  display: block;
+}
+.delete_img .del_img-preview.del_img-success .del_img-success-mark,
+.delete_img-previews .del_img-preview.del_img-success .del_img-success-mark {
+  display: block;
+}
+.delete_img .del_img-preview:hover .del_img-details img,
+.delete_img-previews .del_img-preview:hover .del_img-details img {
+  display: none;
+}
+.delete_img .del_img-preview .del_img-success-mark,
+.delete_img-previews .del_img-preview .del_img-success-mark,
+.delete_img .del_img-preview .del_img-error-mark,
+.delete_img-previews .del_img-preview .del_img-error-mark {
+  display: none;
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  font-size: 30px;
+  text-align: center;
+  right: -10px;
+  top: -10px;
+}
+.delete_img .del_img-preview .del_img-success-mark,
+.delete_img-previews .del_img-preview .del_img-success-mark {
+  color: #8cc657;
+}
+.delete_img .del_img-preview .del_img-error-mark,
+.delete_img-previews .del_img-preview .del_img-error-mark {
+  color: #ee162d;
+}
+.delete_img .del_img-preview .del_img-progress,
+.delete_img-previews .del_img-preview .del_img-progress {
+  position: absolute;
+  top: 100px;
+  left: 6px;
+  right: 6px;
+  height: 6px;
+  background: #d7d7d7;
+  display: none;
+}
+.delete_img .del_img-preview .del_img-progress .del_img-upload,
+.delete_img-previews .del_img-preview .del_img-progress .del_img-upload {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  background-color: #8cc657;
+}
+.delete_img .del_img-preview.del_img-processing .del_img-progress,
+.delete_img-previews .del_img-preview.del_img-processing .del_img-progress {
+  display: block;
+}
+.delete_img .del_img-preview .del_img-error-message,
+.delete_img-previews .del_img-preview .del_img-error-message {
+  display: none;
+  position: absolute;
+  top: -5px;
+  left: -20px;
+  background: rgba(245,245,245,0.8);
+  padding: 8px 10px;
+  color: #800;
+  min-width: 140px;
+  max-width: 500px;
+  z-index: 500;
+}
+.delete_img .del_img-preview:hover.del_img-error .del_img-error-message,
+.delete_img-previews .del_img-preview:hover.del_img-error .del_img-error-message {
+  display: block;
+}
+.delete_img {
+  border: 1px solid rgba(0,0,0,0.03);
+  min-height: 360px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  background: rgba(0,0,0,0.03);
+  padding: 23px;
+}
+.delete_img .del_img-default.del_img-message {
+  opacity: 1;
+  -ms-filter: none;
+  filter: none;
+  -webkit-transition: opacity 0.3s ease-in-out;
+  -moz-transition: opacity 0.3s ease-in-out;
+  -o-transition: opacity 0.3s ease-in-out;
+  -ms-transition: opacity 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out;
+  background-image: url("../images/spritemap.png");
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  position: absolute;
+  width: 428px;
+  height: 123px;
+  margin-left: -214px;
+  margin-top: -61.5px;
+  top: 50%;
+  left: 50%;
+}
+@media all and (-webkit-min-device-pixel-ratio:1.5),(min--moz-device-pixel-ratio:1.5),(-o-min-device-pixel-ratio:1.5/1),(min-device-pixel-ratio:1.5),(min-resolution:138dpi),(min-resolution:1.5dppx) {
+  .delete_img .del_img-default.del_img-message {
+    background-image: url("../images/spritemap@2x.png");
+    -webkit-background-size: 428px 406px;
+    -moz-background-size: 428px 406px;
+    background-size: 428px 406px;
+  }
+}
+.delete_img .del_img-default.del_img-message span {
+  display: none;
+}
+.delete_img.del_img-square .del_img-default.del_img-message {
+  background-position: 0 -123px;
+  width: 268px;
+  margin-left: -134px;
+  height: 174px;
+  margin-top: -87px;
+}
+.delete_img.del_img-drag-hover .del_img-message {
+  opacity: 0.15;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=15)";
+  filter: alpha(opacity=15);
+}
+.delete_img.del_img-started .del_img-message {
+  display: block;
+  opacity: 0;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
+}
+.delete_img .del_img-preview,
+.delete_img-previews .del_img-preview {
+  -webkit-box-shadow: 1px 1px 4px rgba(0,0,0,0.16);
+  box-shadow: 1px 1px 4px rgba(0,0,0,0.16);
+  font-size: 14px;
+}
+.delete_img .del_img-preview.del_img-image-preview:hover .del_img-details img,
+.delete_img-previews .del_img-preview.del_img-image-preview:hover .del_img-details img {
+  display: block;
+  opacity: 0.1;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=10)";
+  filter: alpha(opacity=10);
+}
+.delete_img .del_img-preview.del_img-success .del_img-success-mark,
+.delete_img-previews .del_img-preview.del_img-success .del_img-success-mark {
+  opacity: 1;
+  -ms-filter: none;
+  filter: none;
+}
+.delete_img .del_img-preview.del_img-error .del_img-error-mark,
+.delete_img-previews .del_img-preview.del_img-error .del_img-error-mark {
+  opacity: 1;
+  -ms-filter: none;
+  filter: none;
+}
+.delete_img .del_img-preview.del_img-error .del_img-progress .del_img-upload,
+.delete_img-previews .del_img-preview.del_img-error .del_img-progress .del_img-upload {
+  background: #ee1e2d;
+}
+.delete_img .del_img-preview .del_img-error-mark,
+.delete_img-previews .del_img-preview .del_img-error-mark,
+.delete_img .del_img-preview .del_img-success-mark,
+.delete_img-previews .del_img-preview .del_img-success-mark {
+  display: block;
+  opacity: 0;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
+  -webkit-transition: opacity 0.4s ease-in-out;
+  -moz-transition: opacity 0.4s ease-in-out;
+  -o-transition: opacity 0.4s ease-in-out;
+  -ms-transition: opacity 0.4s ease-in-out;
+  transition: opacity 0.4s ease-in-out;
+  background-image: url("../images/spritemap.png");
+  background-repeat: no-repeat;
+}
+@media all and (-webkit-min-device-pixel-ratio:1.5),(min--moz-device-pixel-ratio:1.5),(-o-min-device-pixel-ratio:1.5/1),(min-device-pixel-ratio:1.5),(min-resolution:138dpi),(min-resolution:1.5dppx) {
+  .delete_img .del_img-preview .del_img-error-mark,
+  .delete_img-previews .del_img-preview .del_img-error-mark,
+  .delete_img .del_img-preview .del_img-success-mark,
+  .delete_img-previews .del_img-preview .del_img-success-mark {
+    background-image: url("../images/spritemap@2x.png");
+    -webkit-background-size: 428px 406px;
+    -moz-background-size: 428px 406px;
+    background-size: 428px 406px;
+  }
+}
+.delete_img .del_img-preview .del_img-error-mark span,
+.delete_img-previews .del_img-preview .del_img-error-mark span,
+.delete_img .del_img-preview .del_img-success-mark span,
+.delete_img-previews .del_img-preview .del_img-success-mark span {
+  display: none;
+}
+.delete_img .del_img-preview .del_img-error-mark,
+.delete_img-previews .del_img-preview .del_img-error-mark {
+  background-position: -268px -123px;
+}
+.delete_img .del_img-preview .del_img-success-mark,
+.delete_img-previews .del_img-preview .del_img-success-mark {
+  background-position: -268px -163px;
+}
+.delete_img .del_img-preview .del_img-progress .del_img-upload,
+.delete_img-previews .del_img-preview .del_img-progress .del_img-upload {
+  -webkit-animation: loading 0.4s linear infinite;
+  -moz-animation: loading 0.4s linear infinite;
+  -o-animation: loading 0.4s linear infinite;
+  -ms-animation: loading 0.4s linear infinite;
+  animation: loading 0.4s linear infinite;
+  -webkit-transition: width 0.3s ease-in-out;
+  -moz-transition: width 0.3s ease-in-out;
+  -o-transition: width 0.3s ease-in-out;
+  -ms-transition: width 0.3s ease-in-out;
+  transition: width 0.3s ease-in-out;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  background-image: url("../images/spritemap.png");
+  background-repeat: repeat-x;
+  background-position: 0px -400px;
+}
+@media all and (-webkit-min-device-pixel-ratio:1.5),(min--moz-device-pixel-ratio:1.5),(-o-min-device-pixel-ratio:1.5/1),(min-device-pixel-ratio:1.5),(min-resolution:138dpi),(min-resolution:1.5dppx) {
+  .delete_img .del_img-preview .del_img-progress .del_img-upload,
+  .delete_img-previews .del_img-preview .del_img-progress .del_img-upload {
+    background-image: url("../images/spritemap@2x.png");
+    -webkit-background-size: 428px 406px;
+    -moz-background-size: 428px 406px;
+    background-size: 428px 406px;
+  }
+}
+.delete_img .del_img-preview.del_img-success .del_img-progress,
+.delete_img-previews .del_img-preview.del_img-success .del_img-progress {
+  display: block;
+  opacity: 0;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
+  -webkit-transition: opacity 0.4s ease-in-out;
+  -moz-transition: opacity 0.4s ease-in-out;
+  -o-transition: opacity 0.4s ease-in-out;
+  -ms-transition: opacity 0.4s ease-in-out;
+  transition: opacity 0.4s ease-in-out;
+}
+.delete_img .del_img-preview .del_img-error-message,
+.delete_img-previews .del_img-preview .del_img-error-message {
+  display: block;
+  opacity: 0;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
+  -webkit-transition: opacity 0.3s ease-in-out;
+  -moz-transition: opacity 0.3s ease-in-out;
+  -o-transition: opacity 0.3s ease-in-out;
+  -ms-transition: opacity 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out;
+}
+.delete_img .del_img-preview:hover.del_img-error .del_img-error-message,
+.delete_img-previews .del_img-preview:hover.del_img-error .del_img-error-message {
+  opacity: 1;
+  -ms-filter: none;
+  filter: none;
+}
+.delete_img a.del_img-remove,
+.delete_img-previews a.del_img-remove {
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #fafafa), color-stop(1, #eee));
+  background-image: -webkit-linear-gradient(top, #fafafa 0, #eee 100%);
+  background-image: -moz-linear-gradient(top, #fafafa 0, #eee 100%);
+  background-image: -o-linear-gradient(top, #fafafa 0, #eee 100%);
+  background-image: -ms-linear-gradient(top, #fafafa 0, #eee 100%);
+  background-image: linear-gradient(top, #fafafa 0, #eee 100%);
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+  border: 1px solid #eee;
+  text-decoration: none;
+  display: block;
+  padding: 4px 5px;
+  text-align: center;
+  color: #aaa;
+  margin-top: 26px;
+}
+.delete_img a.del_img-remove:hover,
+.delete_img-previews a.del_img-remove:hover {
+  color: #666;
+}
